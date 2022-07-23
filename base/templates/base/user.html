@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
+    <style>
+
+    .col-lg-3{
+    color: blue;
+    }
+      h1,
+      p {
+        color: #353535;
+      }
+      p {
+        font-size: 1.15rem;
+      }
+      .lead {
+        font-size: 1.5rem;
+        font-weight: 400;
+      }
+      .content-card {
+        border: 0.0625rem solid #ebebeb;
+        border-radius: 1rem;
+        padding: 2.25rem;
+        margin: 1.5rem 0;
+      }
+
+      .content-card h2 {
+        font-size: 1.4375rem;
+      }
+
+      .row {
+        margin-bottom: 2rem;
+      }
+
+      .column1 {
+  float: left;
+  width: 70%;
+  padding: 15px;
+}
+
+.column2 {
+  float: right;
+  width: 30%;
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+
+    </style>
+
+    <title>OUTWORKER</title>
+  </head>
+
+ <nav class="navbar navbar-expand-lg text-white bg-secondary ">
+  <a class="navbar-brand text-white" href="/">OUTWORKERS</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+       <a class="navbar-brand text-white" href="/">ABOUT</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarText">
+
+    <span class="navbar-text text-white">WELCOME TO ALL OF OUR USERS
+    </span>
+  </div>
+</nav>
+
+
+    {% for i in title %}
+
+<div class="card">
+  <div class="row">
+  <div class="column1 ">
+
+    <h2  style="background-color:">
+      <span class="w3-right w3-tag w3-dark-green w3-round">{{i}}</span></h2>
+      <p style="background-color:grey" ><font color="white">  {{i.description}}</font> </p>
+  </div>
+
+  <div class="column2">
+    <h2 style="background-color:yellow">Contact</h2>
+    <p >{{i.phone}} </p>
+  </div>
+
+  </div>
+</div>
+{% endfor %}
+
+</body>
+</html>
